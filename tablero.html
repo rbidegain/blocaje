@@ -1,0 +1,213 @@
+<!--
+   shannonhtml
+   
+   Copyright 2016 Agapito <agapito@Fulgencio>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>tablero</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.25" />
+</head>
+
+<body>
+<script type="text/javascript">
+var turno=1;
+
+	
+function clic1(col,n) {
+var i=1;
+if (turno == 1) {
+	while(document.getElementById(col+i).alt.length == 0) i++;
+	
+	if (document.getElementById(col+(i+1)).alt != "bp.png") {
+		document.getElementById(col+i).src = "";
+		document.getElementById(col+i).alt = "";
+		document.getElementById(col+(i+1)).src ="wp.png";
+		document.getElementById(col+(i+1)).alt ="wp.png";
+	}
+	turno=0;
+	document.getElementById('turno').textContent ="turno de las negras";
+	document.getElementById('turno').style.backgroundColor="white";
+	document.getElementById('turno').style.color="black";
+	
+}
+}
+
+function clic2(col,n) {
+var i=8;
+	if (turno == 0) {
+	while(document.getElementById(col+i).alt.length == 0) i--;
+	
+	if (document.getElementById(col+(i-1)).alt != "wp.png") {
+		document.getElementById(col+i).src = "";
+		document.getElementById(col+i).alt = "";
+		document.getElementById(col+(i-1)).src ="bp.png";
+		document.getElementById(col+(i-1)).alt ="bp.png";
+	}
+	turno=1;
+	document.getElementById('turno').textContent ="turno de las blancas";
+	document.getElementById('turno').style.backgroundColor="black";
+	document.getElementById('turno').style.color="white";
+}
+}
+
+</script>
+
+<center>
+<table>
+<tr>
+<td>
+<table border="1" cellspacing="2" cellpadding="2" bgcolor="#DAAC3A">
+<tr align="center">
+<td><input type="button" value = "+" onClick="clic1('h')"/></td>
+<td><input type="button" value = "+" onClick="clic1('g')"/></td>
+<td><input type="button" value = "+" onClick="clic1('f')"/></td>
+<td><input type="button" value = "+" onClick="clic1('e')"/></td>
+<td><input type="button" value = "+" onClick="clic1('d')"/></td>
+<td><input type="button" value = "+" onClick="clic1('c')"/></td>
+<td><input type="button" value = "+" onClick="clic1('b')"/></td>
+<td><input type="button" value = "+" onClick="clic1('a')"/></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="h1" src="wp.png" alt="wp.png"></td>
+<td width="50px" height="50px">                  <img id="g1" src="wp.png" alt="wp.png"></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="f1" src="wp.png" alt="wp.png"></td>
+<td width="50px" height="50px">                  <img id="e1" src="wp.png" alt="wp.png"></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="d1" src="wp.png" alt="wp.png"></td>
+<td width="50px" height="50px">                  <img id="c1" src="wp.png" alt="wp.png"></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="b1" src="wp.png" alt="wp.png"></td>
+<td width="50px" height="50px">                  <img id="a1" src="wp.png" alt="wp.png"></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px">                  <img id="h2" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="g2" src="" ></td>
+<td width="50px" height="50px">                  <img id="f2" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="e2" src=""/></td>
+<td width="50px" height="50px">                  <img id="d2" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="c2" src=""/></td>
+<td width="50px" height="50px">                  <img id="b2" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="a2" src=""/></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="h3" src="" ></td>
+<td width="50px" height="50px">                  <img id="g3" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="f3" src=""/></td>
+<td width="50px" height="50px">                  <img id="e3" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="d3" src=""/></td>
+<td width="50px" height="50px">                  <img id="c3" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="b3" src=""/></td>
+<td width="50px" height="50px">                  <img id="a3" src=""/></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px">                  <img id="h4" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="g4" src="" ></td>
+<td width="50px" height="50px">                  <img id="f4" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="e4" src=""/></td>
+<td width="50px" height="50px">                  <img id="d4" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="c4" src=""/></td>
+<td width="50px" height="50px">                  <img id="b4" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="a4" src=""/></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="h5" src="" ></td>
+<td width="50px" height="50px">                  <img id="g5" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="f5" src=""/></td>
+<td width="50px" height="50px">                  <img id="e5" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="d5" src=""/></td>
+<td width="50px" height="50px">                  <img id="c5" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="b5" src=""/></td>
+<td width="50px" height="50px">                  <img id="a5" src=""/></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px">                  <img id="h6" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="g6" src="" ></td>
+<td width="50px" height="50px">                  <img id="f6" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="e6" src=""/></td>
+<td width="50px" height="50px">                  <img id="d6" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="c6" src=""/></td>
+<td width="50px" height="50px">                  <img id="b6" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="a6" src=""/></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="h7" src="" ></td>
+<td width="50px" height="50px">                  <img id="g7" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="f7" src=""/></td>
+<td width="50px" height="50px">                  <img id="e7" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="d7" src=""/></td>
+<td width="50px" height="50px">                  <img id="c7" src=""/></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="b7" src=""/></td>
+<td width="50px" height="50px">                  <img id="a7" src=""/></td>
+</tr>
+
+<tr align="center">
+<td width="50px" height="50px">                  <img id="h8" src="bp.png" alt="bp.png"></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="g8" src="bp.png" alt="bp.png"></td>
+<td width="50px" height="50px">                  <img id="f8" src="bp.png" alt="bp.png"></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="e8" src="bp.png" alt="bp.png"></td>
+<td width="50px" height="50px">                  <img id="d8" src="bp.png" alt="bp.png"></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="c8" src="bp.png" alt="bp.png"></td>
+<td width="50px" height="50px">                  <img id="b8" src="bp.png" alt="bp.png"></td>
+<td width="50px" height="50px" bgcolor="#ffffff"><img id="a8" src="bp.png" alt="bp.png"></td>
+</tr>
+
+<tr align="center">
+<td><input type="button" value = "+" onClick="clic2('h')"/></td>
+<td><input type="button" value = "+" onClick="clic2('g')"/></td>
+<td><input type="button" value = "+" onClick="clic2('f')"/></td>
+<td><input type="button" value = "+" onClick="clic2('e')"/></td>
+<td><input type="button" value = "+" onClick="clic2('d')"/></td>
+<td><input type="button" value = "+" onClick="clic2('c')"/></td>
+<td><input type="button" value = "+" onClick="clic2('b')"/></td>
+<td><input type="button" value = "+" onClick="clic2('a')"/></td>
+</tr>
+
+</table>
+</td>
+<td>
+<table>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td id="turno" style="bgcolor:#ffffff; color:#000000;">turno de las blancas</td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+
+</body>
+
+</html>
